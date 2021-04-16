@@ -1,0 +1,22 @@
+.siguiente-tarea-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: fit-content;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  background-color: rgba(226, 209, 112, 0.4);
+  border-radius: 4px;
+  padding: 15px;
+
+  p {
+    white-space: pre-wrap;
+    margin: 0;
+    margin-right: 20px;
+  }
+
+  button {
+    width: 100px;
+    color: white;
+  }
+}

@@ -1,0 +1,16 @@
+<h2>Crear usuarios</h2>
+<div class="crear-usuarios-container">
+  <label for="usuarios">Usuarios</label>
+  <input type="text" name="tareas" [(ngModel)]="usuarioPendienteDeAnadir" />
+
+  <button (click)="crearUsuario()" class="button">Crear usuario</button>
+</div>
+
+<ul class="lista-usuarios">
+  <li *ngFor="let usuario of usuariosService.usuarios">
+    <span>{{ usuario.nombre }}</span>
+    <button class="button" (click)="verFichaDeUsuario(usuario)">
+      Ver ficha de usuario
+    </button>
+  </li>
+</ul>

@@ -1,0 +1,44 @@
+<h2>Añadir tareas</h2>
+<div class="anadir-tareas-container">
+  <label for="tareas">Tareas</label>
+  <input type="text" name="tareas" [(ngModel)]="tareaPendienteDeAnadir" />
+
+  <button (click)="anadirTareaALaLista()" class="button">
+    Añadir a la lista
+  </button>
+
+  <button (click)="anadirTareaUrgenteALaLista()" class="button accent">
+    Añadir a la lista como urgente
+  </button>
+</div>
+
+<ul class="lista-tareas">
+  <li *ngFor="let tarea of tareas; let i = index">
+    <span>{{ tarea }}</span>
+    <button class="button" (click)="moverTareaAlFinalDeLaLista(i)">
+      Mover al final de la lista
+    </button>
+    <div
+      class="asignar-tareas-a-usuarios-container"
+      *ngIf="
+        usuariosService.usuarios.length > 0 &&
+        !usuariosService.usuarioSeleccionado
+      "
+    >
+      <label for="asignar-tareas-a-usuarios">Asignar tarea al usuario</label>
+      <select
+        (change)="asignarTareaAUsuario(tarea, $event.target.value)"
+        name="asignar-tareas-a-usuarios"
+        id="asignar-tareas-a-usuarios"
+      >
+        <option value="" disabled selected>Selecciona una opción</option>
+        <option
+          [value]="usuario.nombre"
+          *ngFor="let usuario of usuariosService.usuarios"
+        >
+          {{ usuario.nombre }}
+        </option>
+      </select>
+    </div>
+  </li>
+</ul>

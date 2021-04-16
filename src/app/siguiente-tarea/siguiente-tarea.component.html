@@ -1,0 +1,8 @@
+<h2>Siguiente Tarea</h2>
+<div class="siguiente-tarea-container">
+  <p *ngIf="tareas[0]">{{ tareas[0] }}</p>
+  <p *ngIf="!tareas[0]">No hay tareas</p>
+  <button class="button accent" *ngIf="tareas[0]" (click)="tareas.shift()">
+    Terminar
+  </button>
+</div>

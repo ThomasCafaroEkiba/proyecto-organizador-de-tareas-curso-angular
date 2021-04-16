@@ -1,0 +1,31 @@
+.lista-usuarios {
+  li {
+    margin: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: fit-content;
+    justify-content: space-evenly;
+
+    span {
+      width: 200px;
+      white-space: pre-wrap;
+    }
+  }
+
+  select {
+    width: 300px;
+  }
+}
+
+.crear-usuarios-container {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+
+  label,
+  input,
+  button {
+    margin-bottom: 10px;
+  }
+}
